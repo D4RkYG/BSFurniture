@@ -357,3 +357,82 @@ h2 {
 }
 
 
+/* --- Footer Section --- */
+
+.cta {
+  background: var(--color-navy);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.cta h2 {
+  color: var(--color-white);
+}
+
+.cta p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-lg);
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.site-footer {
+  background: var(--color-navy);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-xl);
+  padding-block: var(--space-2xl);
+}
+
+.footer-brand .logo-text {
+  color: var(--color-white);
+}
+
+.footer-brand p {
+  margin-top: var(--space-sm);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.footer-links h3,
+.footer-contact h3 {
+  font-family: var(--font-body);
+  color: var(--color-white);
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a,
+.footer-contact a {
+  color: rgba(255, 255, 255, 0.75);
+  transition: var(--transition);
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: var(--color-gold);
+}
+
+.footer-contact address {
+  font-style: normal;
+}
+
+.footer-contact address p {
+  margin-bottom: 0.4rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-block: var(--space-sm);
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
