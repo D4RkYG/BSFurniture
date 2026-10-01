@@ -1,0 +1,147 @@
+/* --- Reset --- */
+
+*, *::before, *::after {
+    box-sizing : border-box;
+    margin : 0;
+    padding : 0;
+}
+
+
+html {
+    scroll-behavior : smooth;
+}
+
+img {
+    max-width : 100%;
+    display : block;
+}
+
+a {
+    text-decoration : none;
+    color : inherit;
+}
+
+button {
+    font : inherit;
+    cursor : pointer;
+}
+
+
+/* --- Design tokens --- */
+:root {
+    /* Colors */
+    --color-navy : #1B2A4B;
+    --color-gold : #C9A227;
+    --color-gold-dark: #B08A1C;
+    --color-blue: #2F6690;
+    --color-blue-light: #8FC1E3;
+    --color-offwhite: #F7F4EF;
+    --color-white: #FFFFFF;
+    --color-text: #1E2430;
+    --color-text-light: #5B6472;
+
+    /* Typography */
+    --font-heading : 'Playfair Display' , serif;
+    --font-body : 'Inter' , sans-serif;
+
+    /* Spacing scale */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+    --space-2xl: 6rem;
+
+  /* Shape & motion */
+  --radius: 10px;
+  --shadow: 0 10px 30px rgba(27, 42, 75, 0.08);
+  --transition: 0.3s ease;
+
+  /* Layout */
+  --container-width: 1180px;
+}
+
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  line-height: 1.6;
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  color: var(--color-navy);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin-bottom: var(--space-sm);
+}
+
+/* --- Layout utilities --- */
+.container {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.section {
+  padding-block: var(--space-2xl);
+}
+
+.section-alt {
+  background: var(--color-offwhite);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: var(--space-xl);
+}
+
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-gold-dark);
+  margin-bottom: var(--space-xs);
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+.btn-primary:hover {
+  background: var(--color-gold-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border-color: var(--color-navy);
+  color: var(--color-navy);
+}
+
+.btn-outline:hover {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
