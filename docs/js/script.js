@@ -47,3 +47,17 @@ navLinks.forEach((link) => {
     navToggle.setAttribute('aria-expanded', 'false');
   });
 });
+
+
+
+/* --- Close menu when clicking outside --- */
+
+document.addEventListener('click', (event) => {
+  const isClickInsideNav = mainNav.contains(event.target) || navToggle.contains(event.target);
+
+  if (!isClickInsideNav && mainNav.classList.contains('open')) {
+    mainNav.classList.remove('open');
+    navToggle.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+});
