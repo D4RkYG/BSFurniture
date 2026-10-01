@@ -61,3 +61,9 @@ document.addEventListener('click', (event) => {
     navToggle.setAttribute('aria-expanded', 'false');
   }
 });
+
+
+
+/* --- Auto-update footer year --- */
+
+document.getElementById('year').textContent = new Date().getFullYear();
