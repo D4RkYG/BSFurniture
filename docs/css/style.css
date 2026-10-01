@@ -229,3 +229,42 @@ h2 {
   background: var(--color-navy);
   border-radius: 2px;
 }
+
+
+/* --- Hero Section --- */
+
+.hero {
+  padding-block: var(--space-2xl);
+  background: linear-gradient(135deg, var(--color-offwhite) 0%, var(--color-white) 100%);
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  margin-block: var(--space-sm);
+}
+
+.hero-text {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
+  max-width: 480px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.hero-image img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+
