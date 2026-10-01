@@ -8,6 +8,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* keeps anchored sections clear of the sticky header */
 }
 
 img {
@@ -467,9 +468,17 @@ h2 {
 /* --- Responsive Design --- */
 
 @media (max-width: 960px) {
+  .nav-list {
+    gap: var(--space-md);
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .hero-text {
+    margin-inline: auto;
   }
 
   .hero-actions {
@@ -484,9 +493,22 @@ h2 {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 720px) {
+  .hero,
+  .section {
+    padding-block: var(--space-xl);
+  }
+
+  .feature-card {
+    padding: var(--space-md);
+  }
+
   .nav-list,
   .nav-cta {
     display: none;
@@ -499,6 +521,7 @@ h2 {
   .main-nav.open .nav-list {
     display: flex;
     flex-direction: column;
+    gap: var(--space-sm);
     position: absolute;
     top: 100%;
     left: 0;
@@ -516,5 +539,26 @@ h2 {
   .footer-grid {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .footer-brand .logo {
+    justify-content: center;
+  }
+}
+
+/* Respect the "reduce motion" setting in the visitor's OS */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    transition: none !important;
+  }
+
+  .btn-primary:hover,
+  .feature-card:hover,
+  .collection-card:hover {
+    transform: none;
   }
 }
