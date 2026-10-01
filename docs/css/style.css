@@ -62,6 +62,8 @@ button {
 }
 
 
+/* Typography and utility classes */
+
 body {
   font-family: var(--font-body);
   color: var(--color-text);
