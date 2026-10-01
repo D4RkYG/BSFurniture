@@ -1,56 +1,55 @@
 /* --- Reset --- */
 
 *, *::before, *::after {
-    box-sizing : border-box;
-    margin : 0;
-    padding : 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
 html {
-    scroll-behavior : smooth;
+  scroll-behavior: smooth;
 }
 
 img {
-    max-width : 100%;
-    display : block;
+  max-width: 100%;
+  display: block;
 }
 
 a {
-    text-decoration : none;
-    color : inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 button {
-    font : inherit;
-    cursor : pointer;
+  font: inherit;
+  cursor: pointer;
 }
 
 
 /* --- Design tokens --- */
 :root {
-    /* Colors */
-    --color-navy : #1B2A4B;
-    --color-gold : #C9A227;
-    --color-gold-dark: #B08A1C;
-    --color-blue: #2F6690;
-    --color-blue-light: #8FC1E3;
-    --color-offwhite: #F7F4EF;
-    --color-white: #FFFFFF;
-    --color-text: #1E2430;
-    --color-text-light: #5B6472;
+  /* Colors */
+  --color-navy: #1B2A4B;
+  --color-gold: #C9A227;
+  --color-gold-dark: #B08A1C;
+  --color-blue: #2F6690;
+  --color-blue-light: #8FC1E3;
+  --color-offwhite: #F7F4EF;
+  --color-white: #FFFFFF;
+  --color-text: #1E2430;
+  --color-text-light: #5B6472;
 
-    /* Typography */
-    --font-heading : 'Playfair Display' , serif;
-    --font-body : 'Inter' , sans-serif;
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
 
-    /* Spacing scale */
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 2.5rem;
-    --space-xl: 4rem;
-    --space-2xl: 6rem;
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
 
   /* Shape & motion */
   --radius: 10px;
@@ -305,7 +304,7 @@ h2 {
 }
 
 
-/* --- Collapse Section --- */
+/* --- Collections Section --- */
 
 .collections-grid {
   display: grid;
@@ -357,7 +356,7 @@ h2 {
 }
 
 
-/* --- Footer Section --- */
+/* --- CTA and Footer Section --- */
 
 .cta {
   background: var(--color-navy);
