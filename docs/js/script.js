@@ -1,11 +1,17 @@
 /* --- Javascript --- */
 
-/* --- Mobile menu --- */
-
 'use strict';
+
+/* --- Mobile menu --- */
 
 const navToggle = document.getElementById('nav-toggle');
 const mainNav = document.getElementById('main-nav');
+
+function closeMenu() {
+  mainNav.classList.remove('open');
+  navToggle.classList.remove('active');
+  navToggle.setAttribute('aria-expanded', 'false');
+}
 
 navToggle.addEventListener('click', () => {
   const isOpen = mainNav.classList.toggle('open');
@@ -15,37 +21,12 @@ navToggle.addEventListener('click', () => {
 
 
 
-/* --- Animate hamburger --- */
-
-.nav-toggle .bar {
-  /* ...existing width, height, background, border-radius... */
-  transition: var(--transition);
-}
-
-.nav-toggle.active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.nav-toggle.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-toggle.active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-
-
-/* --- menu tapped link --- */
+/* --- Close menu when a link is tapped --- */
 
 const navLinks = document.querySelectorAll('.nav-link');
 
 navLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    mainNav.classList.remove('open');
-    navToggle.classList.remove('active');
-    navToggle.setAttribute('aria-expanded', 'false');
-  });
+  link.addEventListener('click', closeMenu);
 });
 
 
@@ -56,9 +37,18 @@ document.addEventListener('click', (event) => {
   const isClickInsideNav = mainNav.contains(event.target) || navToggle.contains(event.target);
 
   if (!isClickInsideNav && mainNav.classList.contains('open')) {
-    mainNav.classList.remove('open');
-    navToggle.classList.remove('active');
-    navToggle.setAttribute('aria-expanded', 'false');
+    closeMenu();
+  }
+});
+
+
+
+/* --- Close menu with the Escape key --- */
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && mainNav.classList.contains('open')) {
+    closeMenu();
+    navToggle.focus(); // return keyboard users to the button they opened it with
   }
 });
 
@@ -66,4 +56,4 @@ document.addEventListener('click', (event) => {
 
 /* --- Auto-update footer year --- */
 
-document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('current-year').textContent = new Date().getFullYear();
