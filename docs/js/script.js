@@ -33,3 +33,17 @@ navToggle.addEventListener('click', () => {
 .nav-toggle.active .bar:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
+
+
+
+/* --- menu tapped link --- */
+
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    mainNav.classList.remove('open');
+    navToggle.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
