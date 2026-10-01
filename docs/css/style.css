@@ -36,7 +36,8 @@ button {
   /* Colors */
   --color-navy: #1B2A4B;
   --color-gold: #C9A227;
-  --color-gold-dark: #B08A1C;
+  --color-gold-dark: #B48E1F;
+  --color-gold-text: #806210; /* gold that stays readable as small text on light backgrounds */
   --color-blue: #2F6690;
   --color-blue-light: #8FC1E3;
   --color-offwhite: #F7F4EF;
@@ -87,6 +88,17 @@ h2 {
   margin-bottom: var(--space-sm);
 }
 
+/* Keyboard focus ring: blue on light sections, gold on the navy ones */
+:focus-visible {
+  outline: 3px solid var(--color-blue);
+  outline-offset: 3px;
+}
+
+.cta :focus-visible,
+.site-footer :focus-visible {
+  outline-color: var(--color-gold);
+}
+
 /* --- Layout utilities --- */
 .container {
   max-width: var(--container-width);
@@ -115,7 +127,7 @@ h2 {
   letter-spacing: 0.08em;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-gold-dark);
+  color: var(--color-gold-text);
   margin-bottom: var(--space-xs);
 }
 
@@ -212,7 +224,8 @@ h2 {
   transition: var(--transition);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
   width: 100%;
 }
 
@@ -365,7 +378,7 @@ h2 {
 }
 
 .text-link:hover {
-  color: var(--color-gold-dark);
+  color: var(--color-gold-text);
 }
 
 
